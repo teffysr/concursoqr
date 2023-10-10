@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Felicitaciones entraste al juego</title>
+    <title>404 page not found</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -21,9 +21,9 @@
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
             <div class="text-center">
-                <img src="{{ $sponsor->image }}" width="250">
-                <h2 class="text-white-50 mx-auto mt-4 mb-4 fw-bold" style="color: #a606c2!important; font-size: 25px">FELICITACIONES ENTRASTE AL JUEGO</h2>
-                <h2 class="text-white-50 mx-auto mt-2 fw-bold" style="color: #a606c2!important;">${{ number_format($sponsor->amount, 2) }}</h2>
+{{--                 <img src="{{asset('assets/img/404.png')}}" width="250"> --}}
+                <h1 class="text-white-50 mx-auto mt-4 mb-4 fw-bold " style="color: #a606c2!important">404</h1>
+                <h2 class="text-white-50 mx-auto mt-2 fw-bold" style="color: #a606c2!important;">Página no encontrada</h2>
             </div>
         </div>
     </div>

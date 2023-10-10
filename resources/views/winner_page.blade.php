@@ -36,9 +36,9 @@
                  <h2 class="text-white mb-4">Requisitos y bases del juego.</h2>
                  <p class="text-white-50">
                      1.- Descarga la app PagoLinea y crea tu usuario<br>
-                     2.- Síguenos en redes sociales, @pagotieneda.market @Pago_linea.<br>
+                     2.- Síguenos en redes sociales, <a href="https://www.instagram.com/pagotienda.market/" class="text-decoration-none">@pagotieneda.market</a> <a href="https://www.instagram.com/pago_linea/?igshid=MzRlODBiNWFlZA%3D%3D" class="text-decoration-none">@Pago_linea</a>.<br>
                      3.- En carga de fondos sube una foto del QR escaneado y el monto que se muestra en el cupón.<br>
-                     4.- Sube a redes y etiqueta a @pagotieneda.market @Pago_linea
+                     4.- Sube a redes y etiqueta a <a href="https://www.instagram.com/pagotienda.market/" class="text-decoration-none">@pagotieneda.market</a> <a href="https://www.instagram.com/pago_linea/?igshid=MzRlODBiNWFlZA%3D%3D" class="text-decoration-none">@Pago_linea</a>
                  </p>
              </div>
          </div>

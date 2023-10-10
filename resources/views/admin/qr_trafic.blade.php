@@ -75,7 +75,7 @@
                                                         </select>
                                                     </td>
                                                     <td><button type="submit" class="btn btn-primary mb-3">Actualizar</button></td>
-                                                    <td><a class="btn btn-primary" href="/admin/sponsor-qr/{{$qr->id}}" role="button">Imprimir</a></td>
+                                                    <td><a class="btn btn-primary" href="/admin/sponsor-qr/{{$qr->id}}" role="button">Ver Qr</a></td>
                                                 </form>
                                             </tr>
                                         @endforeach

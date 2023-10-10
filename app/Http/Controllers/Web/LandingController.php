@@ -11,17 +11,24 @@ class LandingController extends Controller
 {
     public function winnerPage($id){
         $qr = Qr::find($id);
-        return view('winner_page', [
-            'title' => '',
-            'sponsor' => $qr,
-        ]);
+        if($qr){
+            return view('winner_page', [
+                'title' => '',
+                'sponsor' => $qr,
+            ]);
+        }
+
+        return view('404');
     }
 
     public function sponsorPage($id){
         $qr = Qr::find($id);
-        return view('winner_page', [
-            'title' => '',
-            'sponsor' => $qr,
-        ]);
+        if($qr) {
+            return view('winner_page', [
+                'title' => '',
+                'sponsor' => $qr,
+            ]);
+        }
+        return view('404');
     }
 }

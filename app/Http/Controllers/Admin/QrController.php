@@ -14,21 +14,25 @@ class QrController extends Controller
 {
     public function winner_qr_generate($id){
         $qr = Qr::find($id);
-        $link = env('LANDING_QR', 'http://127.0.0.1:8000').'/winner-page/'.$id;
-        return view('qr', ['link' => $link, 'sponsor' => $qr]);
+        if($qr) {
+            $link = env('LANDING_QR', 'http://127.0.0.1:8000') . '/winner-page/' . $id;
+            return view('qr', ['link' => $link, 'sponsor' => $qr]);
+        }
+        return view('404');
     }
 
     public function sponsor_qr_generate($id){
         $qr = Qr::find($id);
-        $link = $qr->web;
-        return view('qr', ['link' => $link, 'sponsor' => $qr]);
+        if($qr){
+            $link = $qr->web;
+            return view('qr', ['link' => $link, 'sponsor' => $qr]);
+        }
+        return view('404');
     }
 
     public function print_qr($id){
         $qr = Qr::find($id);
         $link = $qr->web;
-//        return view('qr', ['link' => $link, 'sponsor' => $qr]);
-//        QrCode::generate('Make me into a QrCode!', storage_path('app/public').'/qrcode.svg');
         $html = view('qr', ['link' => $link, 'sponsor' => $qr]);
         $pdf = Pdf::loadView($html);
         return $pdf->download('pruebapdf.pdf');
