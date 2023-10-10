@@ -47,7 +47,7 @@ class QrSeeder extends Seeder
 
         //Only Trafic
             Qr::create(
-                ['sponsor' => 'Pago Linea', 'amount' => 0, 'is_winner' => false, 'available' => true, 'image' => '/sponsors/Market.png', 'web' => 'https://www.instagram.com/pago_linea/?igshid=MzRlODBiNWFlZA%3D%3Dhttps://pagolinea.com/'],
+                ['sponsor' => 'Pago Linea', 'amount' => 0, 'is_winner' => false, 'available' => true, 'image' => '/sponsors/Market.png', 'web' => 'https://www.instagram.com/pago_linea/?igshid=MzRlODBiNWFlZA%3D%3D'],
             );
 
 
