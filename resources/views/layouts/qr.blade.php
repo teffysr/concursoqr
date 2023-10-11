@@ -19,7 +19,7 @@
 </head>
 <body id="page-top" style="background: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 0%), url({{asset('qr/assets/img/bg-masthead2.jpg')}});">
 <!-- Mashead header-->
-<header class="masthead" style="background: transparent!important; padding-top: 5rem!important;">
+<header class="masthead" style="background: transparent!important; padding-top: 2rem!important;">
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-12 mb-4">
@@ -36,16 +36,14 @@
                         @yield('content')
                     </div>
                     <div class="mb-lg-0 text-center text-lg-center mb-0">
-                        <span class="text-center opacity-10">{{ $link }}</span>
+                        <span class="text-center opacity-0">{{ $link }}</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-12">
-                <!-- Mashead text and app badges-->
                 <div class="mb-lg-0 text-center text-lg-center mb-0">
-                    <p class="lead fw-normal text-muted mt-5 mb-0 display-6 text-uppercase" style="color: #6f42c1!important;">Escanea el código QR y participa para ganar diferentes premios patrocinados por:</p>
-{{--                     <h3 class="mt-1 display-4" style="color: #ccc2a4!important;">{{ $sponsor->image }}</h3> --}}
-                    <img src="{{ asset($sponsor->image) }}" width="250px">
+                    <p class="lead fw-normal text-muted mt-3 mb-4 display-6 text-uppercase" style="color: #6f42c1!important;">Escanea el código QR y participa para ganar diferentes premios patrocinados por:</p>
+                    <img src="{{ asset($sponsor->image) }}" width="230px">
                 </div>
             </div>
         </div>

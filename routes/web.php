@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {return view('index');});
 Route::get('/winner-page/{id}', [\App\Http\Controllers\Web\LandingController::class, 'winnerPage'])
     ->name('winner');
-Route::get('/sponsor-page/{id}', [\App\Http\Controllers\Web\LandingController::class, 'sponsorPage'])
-    ->name('sponsor');
+
+Route::group(['middleware' => ['cors']], function () {
+    Route::get('/qr-contest/{id}', [\App\Http\Controllers\Admin\QrController::class, 'show'])
+        ->name('qr-contest');
+});
 
 Auth::routes();
 
@@ -28,10 +31,6 @@ Route::get('/qr-winner', [App\Http\Controllers\HomeController::class, 'qrWinner'
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/winner-qr/{id}', [\App\Http\Controllers\Admin\QrController::class, 'winner_qr_generate'])
         ->name('winner-qr');
-    Route::get('/print-qr-winner/{id}', [App\Http\Controllers\Admin\QrController::class, 'print_qr'])->name('printqrWinner');
-
-
-
 
     Route::get('/sponsor-qr/{id}', [\App\Http\Controllers\Admin\QrController::class, 'sponsor_qr_generate'])
         ->name('sponsor-qr');

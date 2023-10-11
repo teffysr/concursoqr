@@ -4,18 +4,25 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Qr;
-use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 
 class QrController extends Controller
 {
+    public function show($id){
+        $id = base64_decode($id);
+        $qr = Qr::find($id);
+        if($qr) {
+            return \response()->json(['amount'=>$qr->amount,'image'=>$qr->image]);
+        }
+        return \response()->json(['message' => 'Qr no encontrado']);
+    }
+
     public function winner_qr_generate($id){
         $qr = Qr::find($id);
         if($qr) {
-            $link = env('LANDING_QR', 'http://127.0.0.1:8000') . '/winner-page/' . $id;
+            $link = env('LANDING_QR') . '/concurso-qr.html#' . base64_encode($id);
             return view('qr', ['link' => $link, 'sponsor' => $qr]);
         }
         return view('404');
@@ -28,14 +35,6 @@ class QrController extends Controller
             return view('qr', ['link' => $link, 'sponsor' => $qr]);
         }
         return view('404');
-    }
-
-    public function print_qr($id){
-        $qr = Qr::find($id);
-        $link = $qr->web;
-        $html = view('qr', ['link' => $link, 'sponsor' => $qr]);
-        $pdf = Pdf::loadView($html);
-        return $pdf->download('pruebapdf.pdf');
     }
 
     public function update($id, Request $request, Response $response)
