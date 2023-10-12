@@ -25,8 +25,11 @@
             <div class="col-lg-12 mb-4">
                 <!-- Mashead text and app badges-->
                 <div class="mb-5 mb-lg-0 text-center text-lg-center mb-4">
-                    <h1 class="display-3 lh-1 mb-3 text-uppercase" style="color: #6f42c1!important;">"La fortuna está al lado de quien se atreve"</h1>
-                    <h5 style="color: #6f42c1!important; margin-top: -20px">(VIRGILIO)</h5>
+                    @php($class = "display-3")
+                    @if( $sponsor->phrase == '“Nunca pienso en las consecuencias de fallar un gran tiro… cuando se piensa en las consecuencias se está pensando en un resultado negativo” - Michael Jordan')
+                        @php($class = "display-5")
+                    @endif
+                    <h1 class="{{ $class }} lh-1 mb-3 text-uppercase fw-bold" style="color: #6f42c1!important;">{{$sponsor->phrase}}</h1>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -43,7 +46,12 @@
             <div class="col-lg-12">
                 <div class="mb-lg-0 text-center text-lg-center mb-0">
                     <p class="lead fw-normal text-muted mt-3 mb-4 display-6 text-uppercase" style="color: #6f42c1!important;">Escanea el código QR y participa para ganar diferentes premios patrocinados por:</p>
-                    <img src="{{ asset($sponsor->image) }}" width="230px">
+                    @php($px = "230px")
+                    @if( $sponsor->image == '/sponsors/LaPuntita.png' and
+                        $sponsor->phrase == '“Nunca pienso en las consecuencias de fallar un gran tiro… cuando se piensa en las consecuencias se está pensando en un resultado negativo” - Michael Jordan')
+                        @php($px = "150px")
+                    @endif
+                    <img src="{{ asset($sponsor->image) }}" width={{ $px }}>
                 </div>
             </div>
         </div>

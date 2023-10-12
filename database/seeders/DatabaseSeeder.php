@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        QrSeeder::run();
+//        QrSeeder::run();
+        QrAcevedoSeeder::run();
+        PhraseSeeder::run();
     }
 }
