@@ -14,7 +14,21 @@ class QrController extends Controller
         $id = base64_decode($id);
         $qr = Qr::find($id);
         if($qr) {
-            return \response()->json(['amount'=>$qr->amount,'image'=>$qr->image]);
+            $instagram = [
+                'Pago Linea' => ['instagram' => '@pagolinea', 'web' => 'https://www.instagram.com/pagolinea'],
+                'Merope' => ['instagram' => '@merope.ba', 'web' => 'https://www.instagram.com/merope.ba/'],
+                'Baru' => ['instagram' => '@barugastropub', 'web' => 'https://www.instagram.com/barugastropub/'],
+                'Market' => ['instagram' => '@pagotienda.market', 'web' => 'https://www.instagram.com/pagotienda.market/'],
+                'Bitconf' => ['instagram' => '@labitconf', 'web' => 'https://www.instagram.com/labitconf/'],
+                'La Puntita' => ['instagram' => '@lapuntita_baires', 'web' => 'https://www.instagram.com/lapuntita_baires/'],
+            ];
+
+            return \response()->json([
+                'amount' => $qr->amount,
+                'image' => $qr->image,
+                'web' => $instagram[$qr->sponsor]['web'],
+                'instagram' => $instagram[$qr->sponsor]['instagram'],
+                'sponsor' => $qr->sponsor]);
         }
         return \response()->json(['message' => 'Qr no encontrado']);
     }
