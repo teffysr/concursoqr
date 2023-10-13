@@ -15,6 +15,7 @@ class QrController extends Controller
         $qr = Qr::find($id);
         if($qr) {
             $instagram = [
+                'Agencia Acevedo' => ['instagram' => '', 'web' => ''],
                 'Pago Linea' => ['instagram' => '@pagolinea', 'web' => 'https://www.instagram.com/pagolinea'],
                 'Merope' => ['instagram' => '@merope.ba', 'web' => 'https://www.instagram.com/merope.ba/'],
                 'Baru' => ['instagram' => '@barugastropub', 'web' => 'https://www.instagram.com/barugastropub/'],
