@@ -17,7 +17,7 @@ class Cors
     public function handle(Request $request, Closure $next)
     {
         return $next($request)
-            ->header("Access-Control-Allow-Origin", env('LANDING_QR'))
+            ->header("Access-Control-Allow-Origin", '*')
             ->header("Access-Control-Allow-Methods", "GET")
             ->header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, X-Token-Auth, Authorization");
     }
